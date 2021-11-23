@@ -1,25 +1,62 @@
+import {observer } from 'mobx-react';
 import logo from './logo.svg';
-import './App.css';
+import Sidebar from "react-sidebar"
+import React from 'react';
+import UserSore from './store/UserStore';
+import SideNavbar from './UI/SideNavbar';
+import Login from './UI/Login';
+import Slideshow from './UI/Slideshow';
 
-function App() {
+import './App.css';
+class App  extends React.Component{
+
+  constructor(props) {
+    super(props);
+    this.state = {
+      sidebarOpen: true
+    };
+    this.onSetSidebarOpen = this.onSetSidebarOpen.bind(this);
+  }
+
+  onSetSidebarOpen(open) {
+    this.setState({ sidebarOpen: open });
+  }
+
+
+  // componentDidMount() {
+  //   axios.get(`https://jsonplaceholder.typicode.com/users`)
+  //     .then(res => {
+  //       const persons = res.data;
+  //       this.setState({ persons });
+  //     })
+  // }
+render(){
+
+
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+
+   
+    // <Admin dataProvider={restProvider('https://tour-app-sudan.herokuapp.com/')}>
+    // </Admin>
+
+
+
+
+
+<>
+      <SideNavbar></SideNavbar>
+
+
+
+
+
+</>
+
+
+    );
+  
+}
 }
 
-export default App;
+export default observer(App);

@@ -45,8 +45,10 @@ render(){
 
 
 <>
+     
       <SideNavbar></SideNavbar>
 
+      
 
 
 

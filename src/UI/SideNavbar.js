@@ -12,7 +12,7 @@ import AddNearLocation from './AddNearLocation';
 import Nationalaties from './reports/Nationalaties';
 import Users from './reports/Users'
 import Comments  from './reports/Comments'
-
+import Logs from './reports/Logs'
 import Home from '../UI/components/Home'
 import './styles/SideNavbar.css'
 import '@trendmicro/react-sidenav/dist/react-sidenav.css';
@@ -45,9 +45,21 @@ class SideNavbar  extends React.Component{
 
                          className="side"
                         >
+
+
                             <SideNav.Toggle />
+
+                            
                             <SideNav.Nav defaultSelected="">
                                 <NavItem eventKey="">
+                                    <NavIcon>
+                                        <i className="fa fa-fw fa-home" style={{ fontSize: '1.75em' }} />
+                                    </NavIcon>
+                                    <NavText>
+                                        Logs
+                                    </NavText>
+                                </NavItem>
+                                <NavItem eventKey="home">
                                     <NavIcon>
                                         <i className="fa fa-fw fa-home" style={{ fontSize: '1.75em' }} />
                                     </NavIcon>
@@ -93,8 +105,8 @@ class SideNavbar  extends React.Component{
 
                         </SideNav>
                         <main  className="main" >
-                
-                <Route path="/" exact component={props => <Home />} />
+                            <Route path="/" exact component={props => <Logs />} />
+                <Route path="/home" exact component={props => <Home />} />
                 {/* <Route path="/AddState" exact component={props => <AddState />} /> */}
 
 
